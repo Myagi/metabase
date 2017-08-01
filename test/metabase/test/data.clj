@@ -204,6 +204,7 @@
             (db/update! Field (:id @field) :special_type (u/keyword->qualified-name special-type))))))))
 
 (defn- create-database! [{:keys [database-name], :as database-definition} engine driver]
+  (println (format "Creating test database: %s %s" engine database-name))
   ;; Create the database
   (i/create-db! driver database-definition)
   ;; Add DB object to Metabase DB

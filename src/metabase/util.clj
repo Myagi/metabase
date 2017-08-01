@@ -95,7 +95,7 @@
 
 (defprotocol ISO8601
   "Protocol for converting objects to ISO8601 formatted strings."
-  (->iso-8601-datetime ^String [this timezone-id]
+  (->iso-8601-datetime ^String [this timezone-id-or-nil]
     "Coerce object to an ISO8601 date-time string such as \"2015-11-18T23:55:03.841Z\" with a given TIMEZONE."))
 
 (def ^:private ISO8601Formatter

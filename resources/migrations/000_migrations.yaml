@@ -3741,3 +3741,14 @@ databaseChangeLog:
             columns:
               - column:
                   name: field_id
+  - changeSet:
+      id: 59
+      author: camsaul
+      changes:
+        - addColumn:
+            tableName: metabase_database
+            columns:
+              - column:
+                  name: metadata_sync_last_started
+                  type: datetime
+                  remarks: 'Last time the metadata sync process (fetch metadata from DB and sync corresponding objects (Tables and Fields)) was STARTED. Used so we can see which Fields are newly created.'
